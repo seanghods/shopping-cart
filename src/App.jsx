@@ -4,15 +4,16 @@ import {
   Routes,
   Navigate,
 } from 'react-router-dom';
-// import { useState } from 'react';
+import { useState } from 'react';
 import { Home, Shop, Cart, NotFound } from './containers';
 import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
+  const [numItems, setNumItems] = useState(0);
   return (
     <Router>
-      <NavBar />
+      <NavBar numItems={numItems} />
       <div className="flex-1">
         <Routes>
           <Route path="/home" element={<Home />} />
