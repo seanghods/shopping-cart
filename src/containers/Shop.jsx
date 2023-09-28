@@ -16,6 +16,7 @@ export default function Shop({ items, addToCart }) {
               />
             </div>
             <div className="title font-bold text-center">{item.title}</div>
+            <div className="price font-bold text-center">${item.price}</div>
             <button
               onClick={() => addToCart(item)}
               className="bg-[#3CAEA3] tracking-widest rounded-md px-10 py-3 text-white font-bobsburgers shadow-md transform transition duration-500 hover:scale-105"

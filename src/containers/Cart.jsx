@@ -1,4 +1,13 @@
 export default function Cart({ cart, removeFromCart }) {
+  const subtotal =
+    Math.round(
+      cart.reduce((acc, next) => {
+        return acc + next.price;
+      }, 0) * 100,
+    ) / 100;
+  const tax = Math.round(subtotal * 1.095 * 100) / 100;
+  const finalPrice = subtotal + tax;
+  console.log(typeof subtotal);
   return (
     <>
       <h1 className="m-7 text-5xl font-bobsburgers">
@@ -20,6 +29,7 @@ export default function Cart({ cart, removeFromCart }) {
                 />
               </div>
               <div className="title font-bold text-center">{item.title}</div>
+              <div className="price font-bold text-center">${item.price}</div>
               <button
                 id={index}
                 onClick={e => {
@@ -32,6 +42,13 @@ export default function Cart({ cart, removeFromCart }) {
             </div>
           );
         })}
+      </div>
+      <div className="price font-bobsburgers text-5xl">
+        Subtotal: ${subtotal}
+      </div>
+      <div className="tax font-bobsburgers text-5xl">9.5% Tax: ${tax}</div>
+      <div className="total font-bobsburgers text-5xl">
+        Final Price: ${finalPrice}
       </div>
     </>
   );
