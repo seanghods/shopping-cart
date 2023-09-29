@@ -1,6 +1,6 @@
 export default function Shop({ items, addToCart }) {
   return (
-    <div className="items m-7 grid grid-cols-[repeat(auto-fill,minmax(100px,500px))] gap-10">
+    <div className="items mt-7 mr-2 md:m-7 grid grid-cols-[repeat(auto-fill,minmax(100px,500px))] gap-10">
       {items.map((item, index) => {
         return (
           <div
@@ -18,8 +18,8 @@ export default function Shop({ items, addToCart }) {
             <div className="title font-bold text-center">{item.title}</div>
             <div className="price font-bold text-center">${item.price}</div>
             <button
-              onClick={() => addToCart(item)}
-              className="bg-[#3CAEA3] tracking-widest rounded-md px-10 py-3 text-white font-bobsburgers shadow-md transform transition duration-500 hover:scale-105"
+              onClick={e => addToCart(e, item)}
+              className="bg-[#3CAEA3] hover:bg-[#2b7971] tracking-widest rounded-md px-10 py-3 text-white font-bobsburgers shadow-md transform transition duration-500 hover:scale-105"
             >
               Add to Cart
             </button>

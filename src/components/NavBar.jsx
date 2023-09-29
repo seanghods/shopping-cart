@@ -11,8 +11,8 @@ import {
 
 export default function NavBar({ cart }) {
   return (
-    <div className="nav-bar-section h-screen flex flex-col w-[150px] md:w-[350px] sticky top-0">
-      <div className="nav-bar flex-1 m-7 bg-[#20639B] rounded-lg text-white shadow-xl shadow-[#106ae0]">
+    <div className="nav-bar-section h-screen flex flex-col w-[100px] md:w-[350px] sticky top-0">
+      <div className="nav-bar flex-1 m-3 md:m-7 bg-[#20639B] rounded-lg text-white shadow-xl shadow-[#106ae0]">
         <div className="logo flex flex-col items-center p-3 md:p-11 text-4xl font-bold font-bobsburgers text-center">
           The Sean Shop
           <img
