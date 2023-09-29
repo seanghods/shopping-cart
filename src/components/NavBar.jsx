@@ -64,7 +64,11 @@ export default function NavBar({ cart }) {
           >
             {({ isActive }) => (
               <>
-                {isActive ? <ShoppingCartIcon /> : <ShoppingCartOutlinedIcon />}
+                {isActive || cart.length > 0 ? (
+                  <ShoppingCartIcon />
+                ) : (
+                  <ShoppingCartOutlinedIcon />
+                )}
                 <p className="hidden md:block">Cart - {cart.length}</p>
               </>
             )}

@@ -2,8 +2,8 @@ import homePic from '../assets/homepage.png';
 
 export default function Home({ navigateShop }) {
   return (
-    <div className="flex flex-col items-center gap-10 md:gap-20">
-      <div className="title text-5xl m-14 font-bobsburgers">
+    <div className="flex flex-col items-center text-center gap-10 md:gap-20">
+      <div className="title text-5xl mt-14 m-3 md:m-14 font-bobsburgers">
         <h1>Welcome to The Sean Shop</h1>
       </div>
       <p className="text-2xl font-bobsburgers">
