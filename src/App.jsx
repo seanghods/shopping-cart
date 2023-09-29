@@ -7,6 +7,7 @@ import './App.css';
 function App() {
   const [cart, setCart] = useState([]);
   const [items, setItems] = useState([]);
+  const [buttonStates, setButtonStates] = useState({});
   const navigate = useNavigate();
   useEffect(() => {
     async function fetchItems() {
@@ -20,9 +21,17 @@ function App() {
     navigate('/shop');
   }
   function addToCart(e, item) {
+    setButtonStates(prevState => ({ ...prevState, [e.target.id]: 'Added' }));
     const newCart = [...cart];
     newCart.push(item);
     setCart(newCart);
+    setTimeout(() => {
+      console.log(buttonStates);
+      setButtonStates(prevState => ({
+        ...prevState,
+        [e.target.id]: 'Add to Cart',
+      }));
+    }, 1000);
   }
   function removeFromCart(e) {
     const index = e.target.id;
@@ -38,7 +47,13 @@ function App() {
           <Route path="/home" element={<Home navigateShop={navigateShop} />} />
           <Route
             path="/shop"
-            element={<Shop items={items} addToCart={addToCart} />}
+            element={
+              <Shop
+                items={items}
+                buttonStates={buttonStates}
+                addToCart={addToCart}
+              />
+            }
           />
           <Route
             path="/cart"

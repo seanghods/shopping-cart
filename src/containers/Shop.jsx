@@ -1,4 +1,4 @@
-export default function Shop({ items, addToCart }) {
+export default function Shop({ items, addToCart, buttonStates }) {
   return (
     <div className="items mt-7 mr-2 md:m-7 grid grid-cols-[repeat(auto-fill,minmax(100px,500px))] gap-10">
       {items.map((item, index) => {
@@ -19,9 +19,10 @@ export default function Shop({ items, addToCart }) {
             <div className="price font-bold text-center">${item.price}</div>
             <button
               onClick={e => addToCart(e, item)}
+              id={index}
               className="bg-[#3CAEA3] hover:bg-[#2b7971] tracking-widest rounded-md px-10 py-3 text-white font-bobsburgers shadow-md transform transition duration-500 hover:scale-105"
             >
-              Add to Cart
+              {buttonStates[index] || 'Add to Cart'}
             </button>
           </div>
         );
