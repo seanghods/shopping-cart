@@ -26,7 +26,6 @@ function App() {
     newCart.push(item);
     setCart(newCart);
     setTimeout(() => {
-      console.log(buttonStates);
       setButtonStates(prevState => ({
         ...prevState,
         [e.target.id]: 'Add to Cart',
