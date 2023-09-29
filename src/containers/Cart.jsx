@@ -9,7 +9,7 @@ export default function Cart({ cart, removeFromCart, navigateShop }) {
   const finalPrice = Math.round((subtotal + tax) * 100) / 100;
   return (
     <>
-      <h1 className="m-7 text-5xl font-bobsburgers">
+      <h1 className="mt-7 mr-2 md:m-7 text-5xl font-bobsburgers">
         Your Cart - {cart.length}
       </h1>
       {cart.length == 0 ? (
@@ -26,7 +26,7 @@ export default function Cart({ cart, removeFromCart, navigateShop }) {
         </div>
       ) : (
         <>
-          <div className="items m-7 grid grid-cols-[repeat(auto-fill,minmax(100px,500px))] gap-10">
+          <div className="items mt-7 mr-2 md:m-7 grid grid-cols-[repeat(auto-fill,minmax(100px,500px))] gap-10">
             {cart.map((item, index) => {
               return (
                 <div
@@ -61,19 +61,17 @@ export default function Cart({ cart, removeFromCart, navigateShop }) {
             })}
           </div>
           <div className="final flex gap-10">
-            <div className="prices">
-              <div className="price font-bobsburgers text-5xl">
+            <div className="prices text-2xl md:text-5xl">
+              <div className="price font-bobsburgers">
                 Subtotal: ${subtotal}
               </div>
-              <div className="tax font-bobsburgers text-5xl">
-                9.5% Tax: ${tax}
-              </div>
-              <div className="total font-bobsburgers text-5xl">
+              <div className="tax font-bobsburgers">9.5% Tax: ${tax}</div>
+              <div className="total font-bobsburgers">
                 Final Price: ${finalPrice}
               </div>
             </div>
             <div className="checkout flex items-center">
-              <button className="bg-[#F6D55C] hover:bg-[#c4a94a] tracking-widest rounded-md px-10 py-5 text-white font-bobsburgers text-2xl shadow-md transform transition duration-500 hover:scale-110">
+              <button className="bg-[#F6D55C] hover:bg-[#c4a94a] tracking-widest rounded-md px-10 py-5 text-white font-bobsburgers md:text-2xl shadow-md transform transition duration-500 hover:scale-110">
                 Checkout
               </button>
             </div>
