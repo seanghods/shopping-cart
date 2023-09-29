@@ -1,10 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-  useNavigate,
-} from 'react-router-dom';
+import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Home, Shop, Cart, NotFound } from './containers';
 import NavBar from './components/NavBar';
